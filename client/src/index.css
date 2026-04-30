@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-cyan: #00FFFF;
+  --color-deep-violet: #8A2BE2;
+  --color-bg-dark: #0A0514;
+  --color-card-dark: #150A2A;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: white;
+}
