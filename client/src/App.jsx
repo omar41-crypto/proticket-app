@@ -33,7 +33,7 @@ function App() {
 
   const fetchMatches = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/matches');
+      const response = await axios.get('https://proticket-app.onrender.com/api/matches');
       setMatches(response.data);
     } catch (error) {
       console.error('Error fetching matches:', error);
@@ -44,7 +44,7 @@ function App() {
     e.preventDefault();
     setBookingStatus('processing');
     try {
-      await axios.post('http://localhost:5001/api/bookings', {
+      await axios.post('https://proticket-app.onrender.com/api/bookings', {
         matchId: selectedMatch._id,
         userEmail: bookingEmail,
         seatsBooked: parseInt(seatsToBook),
@@ -73,7 +73,7 @@ function App() {
     setIsChatLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5001/api/chat', { message: userMessage });
+      const response = await axios.post('https://proticket-app.onrender.com/api/chat', { message: userMessage });
       setChatMessages(prev => [...prev, { role: 'astro', content: response.data.reply }]);
     } catch (error) {
       console.error('Chat error:', error);
